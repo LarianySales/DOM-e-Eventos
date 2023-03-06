@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Mouse</title>
+    <style>
+div{
+    width: 150px;
+    height: 150px;
+    background-color: mediumpurple;
+}
+    </style>
+</head>
+<body>
+    <!-- Eventos mouse
+    -onclick = com um unico click faz com que a mensagem apareça
+    -ondblclick = dois cliques com o mouse
+    - onmouseup = clicar no elemento e soltar em cima 
+    - onmouseover = quando colocamos o mouse em cima do elemento
+    - onmouseout = quando tiramos o mouse de cima do elementos
+    -->
+    <!-- eventos são estruturas html/função -->
+<div onmouseover="acao()" onmouseout="acao1()">
+
+</div>
+
+    <script>
+function acao(){
+    console.log("Evento disparado")
+}
+function acao1(){
+    console.log('Evento out disparado')
+}
+
+
+    </script>
+</body>
+</html>

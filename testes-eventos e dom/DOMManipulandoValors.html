@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - MANIPULANDO Valores</title>
+</head>
+<body>
+    <input id="entrada" onkeyup="distribuiCaracter()" type="text" placeholder="Digite um Caracte">
+    <hr>
+    <span>Letras:</span>
+    <input id="apenas_letras" type="text" disabled>
+    <hr>
+    <span>Números:</span>
+    <input id="apenas_numeros" type="text" disabled>
+
+    <script>
+        function distribuiCaracter(){
+            //selecionou o campor e armazenou o valor do campo
+            let caracter = document.getElementById('entrada').value// pegar os valores do campos
+            console.log(typeof caracter)//string
+
+            //apagar valor do campo
+            document.getElementById('entrada').value = ''//string vazia para zerar as informações
+
+            switch(caracter){//fazendo a selção entre n° de 0 - 9 ou de outras coisas
+                case '0':
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                case '5':
+                case '6':
+                case '7':
+                case '8':
+                case '9':
+                    document.getElementById('apenas_numeros').value += caracter// separa os n° das letras  |adciona o + para concatenar
+                    break// se digitar uma letra
+                    default:// funciona como o if,else if,else
+                    document.getElementById('apenas_letras').value += caracter
+                    break
+            }
+        }
+    </script>
+</body>
+</html>

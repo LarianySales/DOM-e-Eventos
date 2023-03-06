@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Secionando Elementos</title>
+</head>
+<body>
+    <input type="text"
+    placeholder="Digite seu nome"
+    id="entrada"
+    class="campo_nome"
+    name="nome"
+    data-MinhaCASA>
+     
+     <!--tags criadas funcionam com javascript -->
+
+    <script>
+        // faz assim para selecionar os campos ate 2020
+
+
+        console.log(document.getElementById('entrada'))//só o id é no singular os outros sãop no plural
+        console.log(document.getElementsByTagName('input'))
+        console.log(document.getElementsByClassName('campo_nome'))
+        console.log(document.getElementsByTagName('nome'))
+
+        //forma mais atual
+        console.log(document.querySelector('#entrada'))//id 
+        console.log(document.querySelector('.campo_nome'))//class
+
+        console.log(document.querySelector('[data-MINHACASA]'))
+
+
+    </script>
+    
+</body>
+</html>
