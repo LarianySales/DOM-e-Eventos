@@ -1,31 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>atividade3</title>
-    <style>
-    
-    </style>
-</head>
-<body>
-    <!-- 1) Crie um campo <input type="text"> e aplique os seguintes controles com base nos
+<html>
+  <head>
+<!-- 1) Crie um campo <input type="text"> e aplique os seguintes controles com base nos
 eventos abaixo:
 No evento de foco, modifique o background do input para amarelo.
 Quando o campo perder o foco, recupere o seu respectivo valor e:
 Caso o conteúdo contido no campo tenha menos de 3 caracteres o mesmo deve ter seu background alterado para vermelho.
 Caso o conteúdo contido no campo tenha 3 caracteres ou mais o background deve ser alterado para verde.
  -->
- <div id="quadrado"></div>
-<input type="text" placeholder="Digite algo"  onclick="stile1(#023000 ; 200px)">
 
-<script>
-    function stile1(){
-        document.getElementById('quadrado').style.backgroundColor = corDeFundo
 
-    } 
-</script>
- 
-</body>
+    <title>Controles de Eventos em Input</title>
+    <style>
+      input:focus {
+        background-color: yellow;
+      }
+      input.invalid {
+        background-color: red;
+      }
+      input.valid {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="campo">Campo de Entrada:</label>
+    <input type="text" id="campo" />
+
+    <script>
+      const campo = document.getElementById("campo");
+
+      campo.addEventListener("blur", function () {
+        const valor = campo.value;
+
+        if (valor.length < 3) {
+          campo.classList.remove("valid");
+          campo.classList.add("invalid");
+        } else {
+          campo.classList.remove("invalid");
+          campo.classList.add("valid");
+        }
+      });
+    </script>
+  </body>
 </html>
